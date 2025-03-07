@@ -14,9 +14,12 @@ public class DefaultLibraryService implements LibraryService {
     public DefaultLibraryService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
+    @Override
     public void addBook(Book book) {
-        bookRepository.addBook(book);
+        bookRepository.addBook(new Book(book.getId(), "[Default] " + book.getTitle(), book.getAuthor()));
+        System.out.println("[DefaultLibraryService] Added book: " + book.getTitle());
     }
+    @Override
     public Book getBook(int id) {
         return bookRepository.getBook(id);
     }

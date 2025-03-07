@@ -13,8 +13,7 @@ public class LibraryServiceProxy implements LibraryService {
 
 
     @Autowired
-    public LibraryServiceProxy(@Qualifier("defaultLibraryService") LibraryService primaryLibraryService,
-                               @Qualifier("alternativeLibraryService") LibraryService alternativeLibraryService) {
+    public LibraryServiceProxy(LibraryService primaryLibraryService, @Qualifier("alternativeLibraryService") LibraryService alternativeLibraryService) {
         this.primaryLibraryService = primaryLibraryService;
         this.alternativeLibraryService = alternativeLibraryService;
     }

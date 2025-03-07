@@ -19,7 +19,7 @@ public class AlternativeLibraryService implements LibraryService {
     public Book getBook(int id) {
         return bookRepository.getBook(id);
     }
-
+    @Override
     public void addBook(Book book) {
         bookRepository.addBook(new Book(book.getId(), "[Alternative] " + book.getTitle(), book.getAuthor()));
         System.out.println("[AlternativeLibraryService] Added book: " + book.getTitle());
